@@ -5,7 +5,7 @@ Selamat datang di halaman project dari tim KP Labtek (Mei - Juli). Aplikasi ini 
 Masih dalam tahap pengembangan.
 
 # How to use it?
-- Clone this project to your local computer.
+- Clone this project to your local computer using command `git clone https://github.com/nlatifahulfah/complainapp.git`
 - Dont forget to install php web server. You can follow this tutorial: http://php.net/manual/en/install.php
 - And also dont forget to install composer. Follow this link: https://getcomposer.org/download/
 - Run command `composer install` to install all depedencies.
