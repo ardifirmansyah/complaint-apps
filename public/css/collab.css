@@ -55,3 +55,24 @@ table.highlight > tbody > tr:hover {
 textarea.materialize-textarea {
 	height: auto !important;
 }
+
+canvas {
+  border: 1px dotted red;
+}
+
+.chart-container {
+  position: relative;
+  margin: auto;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  height: 50vh;
+  width: 50vw;
+}
+
+.counter-text{
+	font-size: 38pt;
+}
+.jumlah {
+	margin: 8px;
+	border: 1px solid #e0e0e0;
+}
