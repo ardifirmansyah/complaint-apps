@@ -6,8 +6,10 @@ Masih dalam tahap pengembangan.
 
 # How to use it?
 - Clone this project to your local computer.
-- Run command `composer install` to install all depedencies.
 - Dont forget to install php web server. You can follow this tutorial: http://php.net/manual/en/install.php
+- And also dont forget to install composer. Follow this link: https://getcomposer.org/download/
+- Run command `composer install` to install all depedencies.
+- Run command `php artisan key:generate` to generate your application key.
 - You dont need to configure the database. Because the database is ready online (see `.env` file for more information)
 - Just start the app by `php artisan serve` command
 
