@@ -19,13 +19,7 @@ class PageController extends Controller
     public function complaint(){
         return view('complaints.ad-complaints');
     }
-    public function regisfreelancer(){
-        return view('complaints.ad-regis-freelancer');
-    }
     public function newcomplaint(){
         return view('complaints.fl-new-complaint');
-    }
-    public function viewanswer(){
-        return view('complaints.fl-view-answer');
     }
 }

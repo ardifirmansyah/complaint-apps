@@ -25,17 +25,21 @@ Route::middleware(['IsAdmin'])->group(function (){
     Route::delete('/delete-kategori/{id}','KategoriController@destroy')->name('deletekategori');
     Route::post('/store-kategori','KategoriController@store');
     Route::get('/statistik','PageController@statistic')->name('statistic');
-    Route::get('/view-complaint','PageController@complaint')->name('viewcomplaint');
-    Route::get('/regis-fl','PageController@regisfreelancer')->name('regisfreelancer');
+    Route::get('/view-complaint','ComplaintController@getComplaintAll')->name('viewcomplaint');
+    Route::get('/view-complaint-detail/{id}','ComplaintController@getComplaintDetail')->name('viewdetail');
+    Route::get('/view-complaint-status/{status}','ComplaintController@getComplaintStatus')->name('viewstatus');
 });
 Route::middleware(['IsFreelancer'])->group(function(){
-    Route::get('/home-fl','PageController@dashboardfl')->name('homefl');
-    Route::get('/new-complaint','PageController@newcomplaint')->name('newcomplaint');
-    Route::get('/view-answer','PageController@viewanswer')->name('viewanswer');
+    Route::get('/home-fl','ComplaintController@getComplaint')->name('homefl');
+    Route::get('/new-complaint','ComplaintController@create')->name('newcomplaint');
+    Route::post('/save','ComplaintController@store');
+//    Route::get('/get-complaint','ComplaintController@getComplaint');
 });
 
-Route::get('/home-fl','PageController@dashboardfl')->name('homefl')->middleware('IsFreelancer');
+//Route::get('/home-fl','PageController@dashboardfl')->name('homefl')->middleware('IsFreelancer');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/createKategori','KategoriController@create')->name('createKategori');
 //Route::post('/storeKategori','KategoriController@store');
+
+

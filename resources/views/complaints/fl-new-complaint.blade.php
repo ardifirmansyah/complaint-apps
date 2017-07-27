@@ -8,7 +8,7 @@
 
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>New Category</title>
+	<title>New Complaint</title>
 </head>
 
 <body>
@@ -29,65 +29,64 @@
 		<div class="col s12 m4 l2 " style="padding: 0px;">
 			<ul class="collapsible " style="margin:0px; height: 90vh;" data-collapsible="accordion">
 				<li>
-					<a class="collapsible-header" href="{{route('homeadmin')}}">Home</a>
+			    	<div class="row valign-wrapper blue-grey darken-1" style="padding: 20px 0px 20px 0px; ">
+			            <div class="col s4">
+			              <img src="img/user.jpg" class="circle responsive-img"> <!-- notice the "circle" class -->
+			            </div>
+			            <div class="col s8">
+			              <span class="white-text">
+			                Username
+			              </span>
+			            </div>
+			        </div>
+			    </li>
+				<li>
+					<a class="collapsible-header" href="{{route('homefl')}}">Home</a>
 				</li>
 				<li>
-					<a class="collapsible-header" href="{{route('statistic')}}">Statistic</a>
+					<a class="collapsible-header" href="{{route('newcomplaint')}}">Complaint</a>
 				</li>
-				<li>
-					<a class="collapsible-header" href="{{route('viewcomplaint')}}">Complaint</a>
-				</li>
-				<li>
-					<a class="collapsible-header" href="#">Categories<i class="material-icons right">keyboard_arrow_down</i></a>
-					<div class="collapsible-body" style="padding: 1rem 1rem 1rem 2rem;">
-						<a href="{{route('createkategori')}}"><i class="material-icons">add_circle_outline</i>New Category</a>
-					</div>
-					<div class="collapsible-body" style="padding: 1rem 1rem 1rem 2rem;">
-						<a href="{{route('editkategori')}}"><i class="material-icons">create</i>Edit Category</a>
-					</div>
-				</li>
+
 				<li>
 					<a class="collapsible-header" href="{{ route('logout') }}"
-					   onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+					   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
 						Logout
 					</a>
 					<form id="logout-form" action="{{ route('logout') }}" method="POST" >
 						{{ csrf_field() }}
 					</form>
 				</li>
-
 			</ul>
 		</div>
 		<!-- Content -->
 		<div class="col s12 m8 l10 blue-grey lighten-5" style="height: 90vh;">
-			<h4>New Category</h4>
-			<form method="POST" action="/store-kategori">
+			<h4>New Complaint</h4>
+			<form method = "POST" action="/save" >
 				{{csrf_field()}}
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="category" type="text" name="nama" class="validate">
-						<label for="category">Name of Category</label>
+					    <select name="catagory_id">
+					      	<option value="" disabled selected>Choose your option</option>
+							@foreach($kategoris as $kategori)
+					      	<option value="{{$kategori->id}}">{{$kategori->nama}}</option>
+					      	@endforeach
+					    </select>
+					    <label>Category</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col s12">
-					    <select name="prioritas">
-					      	<option value="" disabled selected>Choose your option</option>
-					      	<option value="1">Low</option>
-					      	<option value="2">Mid</option>
-					      	<option value="3">High</option>
-					    </select>
-					    <label>Priority</label>
-					</div>
-				</div>
-
-				
+			        <div class="input-field col s12">
+			          <textarea id="icon_prefix2" class="materialize-textarea" name="description"></textarea>
+			          <label for="icon_prefix2">Description</label>
+			        </div>
+			    </div>
 				<button class="btn waves-effect waves-light blue-grey darken-3" style="float:right" type="submit" name="action">
-					<i class="material-icons left">create</i>Create
+					<i class="material-icons left">send</i>Send
 				</button>
-				<button class="btn waves-effect waves-light blue-grey darken-3" style="float:right; margin-right: 10px;" >
-					<i class="material-icons left">cancel</i>Cancel
-				</button>
+				{{--<button class="btn waves-effect waves-light blue-grey darken-3" style="float:right; margin-right: 10px;" >--}}
+					{{--<i class="material-icons left">cancel</i>Cancel--}}
+				{{--</button>--}}
 			</form>
 		</div>
 	</div>

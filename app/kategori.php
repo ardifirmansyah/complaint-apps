@@ -10,4 +10,7 @@ class kategori extends Model
     protected $fillable =[
         'nama','prioritas',
     ];
+    public function complaint(){
+        $this->hasMany(Complaint::class);
+    }
 }

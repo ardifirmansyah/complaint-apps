@@ -8,7 +8,7 @@
 
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>New Category</title>
+	<title>View Complaint</title>
 </head>
 
 <body>
@@ -55,50 +55,39 @@
 						{{ csrf_field() }}
 					</form>
 				</li>
-
 			</ul>
 		</div>
 		<!-- Content -->
 		<div class="col s12 m8 l10 blue-grey lighten-5" style="height: 90vh;">
-			<h4>New Category</h4>
-			<form method="POST" action="/store-kategori">
-				{{csrf_field()}}
-				<div class="row">
-					<div class="input-field col s12">
-						<input id="category" type="text" name="nama" class="validate">
-						<label for="category">Name of Category</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-					    <select name="prioritas">
-					      	<option value="" disabled selected>Choose your option</option>
-					      	<option value="1">Low</option>
-					      	<option value="2">Mid</option>
-					      	<option value="3">High</option>
-					    </select>
-					    <label>Priority</label>
-					</div>
-				</div>
-
-				
-				<button class="btn waves-effect waves-light blue-grey darken-3" style="float:right" type="submit" name="action">
-					<i class="material-icons left">create</i>Create
-				</button>
-				<button class="btn waves-effect waves-light blue-grey darken-3" style="float:right; margin-right: 10px;" >
-					<i class="material-icons left">cancel</i>Cancel
-				</button>
-			</form>
+			<h4>Complaint</h4>
+			<div class="row blue-grey lighten-3" style="padding: 20px; margin-bottom: 0px;">
+				<h5>Username <small>dd-mm-yyyy</small></h5>
+				<p style="padding: 10px;">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+			<div class="row" style="padding: 20px; margin-bottom: 0px; border: 1px solid #b0bec5;">
+			    <form class="col s12">
+				    <div class="row">
+				        <div class="input-field col s12">
+				          <i class="material-icons prefix">mode_edit</i>
+				          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+				          <label for="icon_prefix2">Message</label>
+				        </div>
+				    </div>
+			      	<button class="btn waves-effect waves-light blue-grey darken-3" style="float:right" type="submit" name="action">
+						<i class="material-icons left">reply</i>Reply
+					</button>
+					<button class="btn waves-effect waves-light blue-grey darken-3" style="float:right; margin-right: 10px;" >
+						<i class="material-icons left">cancel</i>Cancel
+					</button>
+			    </form>
+			</div>
 		</div>
 	</div>
 
 	<!--Import jQuery before materialize.js-->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
-	<script>
-		$(document).ready(function() {
-		    $('select').material_select();
-		});
-	</script>
 </body>
 </html>

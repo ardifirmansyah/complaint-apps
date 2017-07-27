@@ -8,7 +8,7 @@
 
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>New Category</title>
+	<title>Complaints</title>
 </head>
 
 <body>
@@ -26,7 +26,7 @@
 
 	<div class="row" style="margin-bottom: 0px;">
 		<!-- Sidebar  -->
-		<div class="col s12 m4 l2 " style="padding: 0px;">
+		<div class="col s12 m4 l2" style="padding: 0px;">
 			<ul class="collapsible " style="margin:0px; height: 90vh;" data-collapsible="accordion">
 				<li>
 					<a class="collapsible-header" href="{{route('homeadmin')}}">Home</a>
@@ -55,50 +55,39 @@
 						{{ csrf_field() }}
 					</form>
 				</li>
-
 			</ul>
 		</div>
 		<!-- Content -->
-		<div class="col s12 m8 l10 blue-grey lighten-5" style="height: 90vh;">
-			<h4>New Category</h4>
-			<form method="POST" action="/store-kategori">
-				{{csrf_field()}}
-				<div class="row">
-					<div class="input-field col s12">
-						<input id="category" type="text" name="nama" class="validate">
-						<label for="category">Name of Category</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-					    <select name="prioritas">
-					      	<option value="" disabled selected>Choose your option</option>
-					      	<option value="1">Low</option>
-					      	<option value="2">Mid</option>
-					      	<option value="3">High</option>
-					    </select>
-					    <label>Priority</label>
-					</div>
-				</div>
+		<div class="col s12 m8 l10" style="height: 90vh;">
+			<h4>All Complaints</h4>
+			<table class="highlight">
+		        <thead>
+		          	<tr>
+		              	<th>No</th>
+		              	<th>Date</th>
+		              	<th>Category</th>
+		              	<th>Description</th>
+		              	<th>Status</th>
+		          	</tr>
+		        </thead>
 
-				
-				<button class="btn waves-effect waves-light blue-grey darken-3" style="float:right" type="submit" name="action">
-					<i class="material-icons left">create</i>Create
-				</button>
-				<button class="btn waves-effect waves-light blue-grey darken-3" style="float:right; margin-right: 10px;" >
-					<i class="material-icons left">cancel</i>Cancel
-				</button>
-			</form>
+		        <tbody>
+				@foreach($data as $getdataAd)
+					<tr>
+						<td>{{$loop->iteration}}</td>
+						<td>{{Str_limit($getdataAd->created_at,10,'')}}</td>
+						<td>{{$getdataAd->kategori->nama}}</td>
+						<td>{{$getdataAd->description}}</td>
+						<td>{{$getdataAd->status}}</td>
+					</tr>
+				@endforeach
+		        </tbody>
+		    </table>
 		</div>
 	</div>
 
 	<!--Import jQuery before materialize.js-->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
-	<script>
-		$(document).ready(function() {
-		    $('select').material_select();
-		});
-	</script>
 </body>
 </html>
