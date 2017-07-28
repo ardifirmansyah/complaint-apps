@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\kategori;
 use Illuminate\Http\Request;
 
-class KategoriController extends Controller
+class FreelancerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class KategoriController extends Controller
     public function index()
     {
         //halaman awal
-        $kategoris = kategori::all();
-        return view('prioritas.index',['kategoris'=>$kategoris]);
+        // $kategoris = kategori::all();
+        // return view('prioritas.index',['kategoris'=>$kategoris]);
     }
 
     /**
@@ -27,7 +27,7 @@ class KategoriController extends Controller
     public function create()
     {
         //form buat input data
-        return view('complaints.ad-category');
+        return view('complaints.ad-regis-freelancer');
     }
 
     /**
@@ -39,15 +39,15 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request,[
-            'nama' => 'required',
-            'prioritas' =>'required',
-        ]);
-        $kategori = new kategori();
-        $kategori->nama = $request->nama;
-        $kategori->prioritas = $request->prioritas;
-        $kategori->save();
-        return redirect()->route('editkategori');
+        // $this->validate($request,[
+        //     'nama' => 'required',
+        //     'prioritas' =>'required',
+        // ]);
+        // $kategori = new kategori();
+        // $kategori->nama = $request->nama;
+        // $kategori->prioritas = $request->prioritas;
+        // $kategori->save();
+        // return redirect()->route('createkategori');
     }
 
     /**
@@ -59,8 +59,8 @@ class KategoriController extends Controller
     public function show($id)
     {
         //
-        $kategori = kategori::find($id);
-        return route('showKategori',['kategori'=>$kategori]);
+        // $kategori = kategori::find($id);
+        // return route('showKategori',['kategori'=>$kategori]);
     }
 
     /**
@@ -73,9 +73,9 @@ class KategoriController extends Controller
     public function edit()
     {
         //
-        $kategoris = kategori::all();
-//        return $kategoris;
-        return view('complaints.ad-edit-category',['kategoris'=>$kategoris]);
+//         $kategoris = kategori::all();
+// //        return $kategoris;
+//         return view('complaints.ad-edit-category',['kategoris'=>$kategoris]);
     }
 
     /**
@@ -88,16 +88,16 @@ class KategoriController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $this->validate($request,[
-            'nama' => 'required',
-            'prioritas' =>'required',
-        ]);
-        $kategori = kategori::find($id);
-        $kategori->nama = $request->nama;
-        $kategori->prioritas= $request->prioritas;
-        $kategori->save();
-//        return $kategori;
-        return redirect()->route('editkategori');
+//         $this->validate($request,[
+//             'nama' => 'required',
+//             'prioritas' =>'required',
+//         ]);
+//         $kategori = kategori::find($id);
+//         $kategori->nama = $request->nama;
+//         $kategori->prioritas= $request->prioritas;
+//         $kategori->save();
+// //        return $kategori;
+//         return redirect()->route('editkategori');
     }
 
     /**
@@ -109,8 +109,8 @@ class KategoriController extends Controller
     public function destroy($id)
     {
         //
-        $kategori = kategori::find($id);
-        $kategori->delete();
-        return redirect()->route('editkategori');
+        // $kategori = kategori::find($id);
+        // $kategori->delete();
+        // return redirect()->route('editkategori');
     }
 }

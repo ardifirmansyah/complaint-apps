@@ -51,9 +51,7 @@
 	</div>
 </div>
 	<ul class="collapsible" data-collapsible="accordion">
-        {{--@foreach($kategoris as $kategori)--}}
 	    <li>
-            {{--@foreach($kategoris as $kategori)--}}
 	      	<div class="row collapsible-header white black-text">
 	      		<div class="col l1 ">No</div>
 	      		<div class="col l9">Name</div>
@@ -104,7 +102,6 @@
                     </button>
                 </form>
 
-		      	{{--</form>--}}
 	      	</div>
 
 	    </li>

@@ -66,7 +66,7 @@
 				{{csrf_field()}}
 				<div class="row">
 					<div class="input-field col s12">
-					    <select name="catagory_id">
+					    <select name="catagory_id" id="kategori_id">
 					      	<option value="" disabled selected>Choose your option</option>
 							@foreach($kategoris as $kategori)
 					      	<option value="{{$kategori->id}}">{{$kategori->nama}}</option>
