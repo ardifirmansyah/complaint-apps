@@ -6,6 +6,7 @@
 	<!--Import materialize.css-->
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 	<link type="text/css" rel="stylesheet" href="css/collab.css"  media="screen,projection">
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>@yield('title')</title>
@@ -28,7 +29,7 @@
 					<a href="{{route('editkategori')}}">Categories</a>
 				</li>
 				<li>
-					<a href="{{route('regisfreelancer')}}">Freelancers</a>
+					<a href="{{route('register')}}">Freelancers</a>
 				</li>
 				<li>
 					<a href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -49,7 +50,7 @@
 					<a href="{{route('editkategori')}}">Categories</a>
 				</li>
 				<li>
-					<a href="{{route('regisfreelancer')}}">Freelancers</a>
+					<a href="{{route('register')}}">Freelancers</a>
 				</li>
 				<li>
 					<a href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -66,6 +67,7 @@
 	<!--Import jQuery before materialize.js-->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 	<script>
 		//navbar
 		$(".button-collapse").sideNav();
@@ -86,6 +88,12 @@
 		$(document).ready(function() {
 			$('select').material_select();
 		});
+
+	</script>
+	<script>
+	$(document).ready(function(){
+    	$('#myTable').DataTable();
+	});
 	</script>
 </body>
 </html>

@@ -27,7 +27,7 @@ class FreelancerController extends Controller
     public function create()
     {
         //form buat input data
-        return view('complaints.ad-regis-freelancer');
+        return view('auth.register');
     }
 
     /**

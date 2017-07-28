@@ -10,50 +10,9 @@
 		</div>
 	</div>
 	<br>
-	<div class="row">
-		<div class="col l1 grey-text text-darken-3">
-			Filter by: 
-		</div>		
-		<form id="filter_by" action="/filter-by" method="POST">
-			<div class="input-field col l3">
-			    <select name="prioritas">
-			      	<option value="" disabled selected>Choose your option</option>
-			      	<option value="1">Low</option>
-			      	<option value="2">Mid</option>
-			      	<option value="3">High</option>
-			    </select>
-			    <label>Priority</label>
-			</div>
-			<div class="input-field col l3">
-			    <select name="status">
-			      	<option value="" disabled selected>Choose your option</option>
-			      	<option value="1">New</option>
-			      	<option value="2">On Review</option>
-			      	<option value="3">Answered</option>
-			    </select>
-			    <label>Status</label>
-			</div>
-			<div class="input-field col l3">
-			    <select name="kategori">
-			      	<option value="" disabled selected>Choose your option</option>
-			      	@foreach($kategoris as $kategori)
-			      	<option value="{{$kategori->id}}">{{$kategori->nama}}</option>
-			      	@endforeach
-			    </select>
-			    <label>Category</label>
-			</div>
-		</form>
-		<!-- <div class="col l2">
-			<a href="#!" class="btn waves-effect waves-light" 
-			onclick="event.preventDefault(); document.getElementById('filter_by').submit();">
-				<i class="material-icons left">filter</i>Filter
-			</a>
-		</div> -->
-		
-	</div>
 	<!-- Complaints Table -->
 	<div class="row table-container">
-		<table class="striped highlight responsive-table">
+		<table id="myTable" class="striped highlight responsive-table" >
 			<thead>
 			  	<tr>
 					<th>No</th>
@@ -74,7 +33,16 @@
 						<td>{{ Str_limit($getdata->created_at, 10,'') }}</td>
 						<td>{{$getdata->User->name}}</td>
 						<td>{{$getdata->kategori->nama}}</td>
-						<td>{{$getdata->kategori->prioritas}}</td>
+						<td>
+
+							@if($getdata->kategori->prioritas === '1')
+								Low
+							@elseif ($getdata->kategori->prioritas === '2')
+								Mid
+							@elseif ($getdata->kategori->prioritas === '3')
+								High
+							@endif
+						</td>
 						<td>{{$getdata->description}}</td>
 						@if ($getdata->status == "Received")
 							<td><span class="badge red darken-2 white-text"><b>New</b></span></td>
