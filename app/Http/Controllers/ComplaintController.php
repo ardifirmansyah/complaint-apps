@@ -80,7 +80,7 @@ class ComplaintController extends Controller
 
     public function followUp($id)
     {
-        $data = Complaint::find($id);
+        $data = Complaint::findOrFail($id);
         $data->updated_at = date("Y-m-d H:i:s");
         $data->save();
         return redirect()->route('homefl');

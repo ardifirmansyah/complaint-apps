@@ -12,7 +12,7 @@
             {{csrf_field()}}
             
             <div class="row">
-                <!-- <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}"> -->
+               
                 <div class="input-field col s12">
                     <input id="name" type="text" name="name" value="{{ old('name') }}" class="validate" required>
                     <label for="name">Name</label>
@@ -23,10 +23,9 @@
                         </span>
                     @endif
                 </div>
-                <!-- </div> -->
             </div>
             <div class="row">
-                <!-- <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}"> -->
+               
                 <div class="input-field col s12">
                     <input id="email" type="email" name="email" value="{{ old('email') }}" class="validate" required>
                     <label for="email">Email Address</label>
@@ -36,10 +35,9 @@
                         </span>
                     @endif
                 </div>
-                <!-- </div> -->
             </div>
             <div class="row">
-                <!-- <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}"> -->
+                
                 <div class="input-field col s12">
                     <input id="password" type="password" name="password" class="validate" required>
                     <label for="password">Password</label>
@@ -50,7 +48,6 @@
                     @endif
                 </div>
                 
-                <!-- </div> -->
             </div>
             <div class="row">
                 <div class="input-field col s12">
@@ -71,3 +68,5 @@
 
 
 @endsection
+
+

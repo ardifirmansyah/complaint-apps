@@ -244,21 +244,20 @@
 			  					@endif					
 			  				</div>
 			  			</div>
+			  			<form id="follow_up{{$getdata->id}}" action="/follow-up/{{$getdata->id}}" method="POST" >
+							<input type="hidden" name="_method" value="PUT">
+							{{ csrf_field() }}
+						</form>
+
 				  		<div class="modal-footer">
 				  			
-							<form action="/follow-up/{{$getdata->id}}" method="POST" >
-								<input type="hidden" name="_method" value="PUT">
-								{{ csrf_field() }}
-							</form>
-
 				  			@if ($getdata->status == "Answered")
-		  						<a class="waves-effect waves-light btn disabled">Send Follow Up</a>
-		  					@else
-		  						<a class="waves-effect waves-light btn" id="btnFollowUp" 
-							   onclick="event.preventDefault();
-		                                                     document.getElementById('formFollowUp').submit();">Send Follow Up</a>
-		  					@endif
-				  			
+				  				<a href="#!" class="modal-action modal-close waves-effect waves-red darken-2 btn-flat disabled">Send Follow Up</a>
+				  				
+				  			@else
+				  				<a href="#!" class="waves-effect waves-light btn"
+				  				onclick="event.preventDefault(); document.getElementById('follow_up{{$getdata->id}}').submit();">Send Follow Up</a>
+				  			@endif
 							<a href="#!" class="modal-action modal-close waves-effect waves-red darken-2 btn-flat">
 								<i class="material-icons left">close</i>Close
 							</a>

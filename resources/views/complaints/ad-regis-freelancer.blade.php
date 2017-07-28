@@ -8,7 +8,7 @@
     <div class="col l3"></div>
     <div class="col l6">
         <h4>Add Freelancer</h4>
-        <form method="POST" action="/store-kategori">
+        <form method="POST" action="{{ route('register') }}">
             {{csrf_field()}}
             <div class="row">
                 <div class="input-field col s12">
@@ -18,19 +18,19 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="email" type="email" name="nama" class="validate">
+                    <input id="email" type="email" name="email" class="validate">
                     <label for="email">Email Address</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="password" type="password" name="nama" class="validate">
+                    <input id="password" type="password" name="password" class="validate">
                     <label for="password">Password</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="password" type="password" name="nama" class="validate">
+                    <input id="password" type="password" name="password_confirmation" class="validate">
                     <label for="password">Confirm Password</label>
                 </div>
             </div>

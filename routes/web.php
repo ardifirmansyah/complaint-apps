@@ -37,7 +37,7 @@ Route::middleware(['IsFreelancer'])->group(function(){
     Route::get('/home-fl','ComplaintController@getFLComplaintNCategory')->name('homefl');
     Route::get('/new-complaint','ComplaintController@create')->name('newcomplaint');
     Route::post('/save','ComplaintController@store');
-    Route::put('/follow-up/{id}','ComplaintController@followUp');
+    Route::put('/follow-up/{id}','ComplaintController@followUp')->name('followup');
 //    Route::get('/get-complaint','ComplaintController@getComplaint');
 });
 

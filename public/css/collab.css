@@ -16,7 +16,9 @@ nav ul a:hover {
 	background-color: rgba(255, 0, 0, 0.8) !important;
 	color: white !important;
 }
-
+/*.nav-wrapper{
+	background-color: #2B394F !important;
+}*/
 span.badge {
 	float: left !important;
 	margin-left: 0px !important;
